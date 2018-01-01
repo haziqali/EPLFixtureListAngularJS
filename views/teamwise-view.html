@@ -1,0 +1,72 @@
+<div class="row" style="background-color: white; color: black">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <br/>
+        <h1>Team Wise Stastics for 2015 and 2016</h1>
+        <div class="post-preview" style="color: black" ng-repeat="match in mainCtrl.arrayObject">
+            <h1 style="background-color: black; color:ghostwhite; text-align: center" class="center-block">{{match.teamName}}</h1>
+            <table class="table table-responsive table-striped table-bordered table-condensed" style="font-size: 1.2vmax;margin-bottom: 10%">
+                <tr>
+                    <td>Total Games Played</td>
+                    <td>{{match.homeGamesPlayed + match.awayGamesPlayed}}</td>
+                </tr>
+                <tr>
+                    <td>Total Games Won</td>
+                    <td>{{match.homeGamesWon + match.awayGamesWon}}</td>
+                </tr>
+                <tr>
+                    <td>Total Games Lost</td>
+                    <td>{{match.homeGamesLost + match.awayGamesLost}}</td>
+                </tr>
+                <tr>
+                    <td>Total Games Drawn</td>
+                    <td>{{match.homeGamesDrawn + match.awayGamesDrawn}}</td>
+                </tr>
+                <tr>
+                    <td>Total Goals Scored</td>
+                    <td>{{match.goalsScored}}</td>
+                </tr>
+                <tr>
+                    <td>Total Goals Conceded</td>
+                    <td>{{match.goalsConceded}}</td>
+                </tr>
+                <tr>
+                    <td>Home Games Played</td>
+                    <td>{{match.homeGamesPlayed}}</td>
+                </tr>
+                <tr>
+                    <td>Home Games Won</td>
+                    <td>{{match.homeGamesWon}}</td>
+                </tr>
+                <tr>
+                    <td>Home Games Drawn</td>
+                    <td>{{match.homeGamesDrawn}}</td>
+                </tr>
+                <tr>
+                    <td>Home Games Lost</td>
+                    <td>{{match.homeGamesLost}}</td>
+                </tr>
+                <tr>
+                    <td>Away Games Played</td>
+                    <td>{{match.awayGamesPlayed}}</td>
+                </tr>
+                <tr>
+                    <td>Away Games Won</td>
+                    <td>{{match.awayGamesWon}}</td>
+                </tr>
+                <tr>
+                    <td>Away Games Drawn</td>
+                    <td>{{match.awayGamesDrawn}}</td>
+                </tr>
+                <tr>
+                    <td>Away Games Lost</td>
+                    <td>{{match.awayGamesLost}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Pager -->
+        <ul class="pager">
+            <a href="#/" style="background-color: firebrick;text-align: center;" class="btn btn-lg">BACK  &larrhk;</a>
+        </ul>
+    </div>
+</div>

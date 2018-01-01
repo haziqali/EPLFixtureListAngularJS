@@ -1,0 +1,35 @@
+<div class="row" style="background-color: black">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: black">
+        <div style="background-color: black; color: darkgrey">
+            <div class="col-md-4" style="background-color: black"> <label>Filter by Year </label> <input type="text" ng-model="teamName.year" style="color: black"></div>
+            <div class="col-md-4" style="background-color: black"> <label>Filter by Team </label><input type="text" ng-model="teamName.name" style="color: black"></div>
+            <div class="col-md-4" style="background-color: black"> <label>Filter by Score</label><input type="text" ng-model="teamName.score" style="color: black"></div><br>
+
+        </div>
+        
+        <div class="post-preview" ng-repeat="game in mainCtrl.matches" style="background-color: black;color: white; width: 100%;padding-bottom: 2vmax;" ng-show="mainCtrl.hideFunction()">
+            <strong style="background-color: red;color: white; width: 100%;text-align: center;padding-top: 0vmax" class="center-block">{{game.name}}</strong> <br>
+            <div ng-repeat="matches in game.matches">
+                <a href="#!/match/{{matches}}">
+                    <h5 class="post-title" style="text-align: center;padding-bottom: 0vmax">
+                        {{matches.team1.name}} ({{matches.team1.code}}) vs {{matches.team2.name}} ({{matches.team2.code}})
+                    </h5>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <div class="post-preview center-block" ng-repeat="game in mainCtrl.matches | customFilter:this" style="background-color: black;color: white; width: 100%;padding-bottom: 2vmax" ng-hide="mainCtrl.hideFunction()">
+                <div style="margin-top: 2vmax">
+                    <a href="#!/match/{{game}}">
+                        <h5 class="post-title center-block" style="text-align: center">
+                            {{game.team1.name}} ({{game.team1.code}}) vs {{game.team2.name}} ({{game.team2.code}})</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+<ul class="pager">
+                <a href="#id" style="background-color: firebrick;text-align: center;" class="btn btn-lg"> &uuarr; BACK TO TOP &uuarr;</a>
+            </ul>
+    </div>
