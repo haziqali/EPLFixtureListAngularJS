@@ -24,3 +24,4 @@ myApp.directive('navbar', function() {
 
     return directive;
 })
+

@@ -14,7 +14,9 @@ myApp.controller('mainController', ['$http', '$scope', function ($http, $scope) 
     this.matches = [];
     this.baseUrl = 'https://raw.githubusercontent.com/openfootball/football.json/master';
     $scope.filteredMatches = [];
+    
     var loadFirstSeason = function () {
+        $scope.loading = true;
         $http({
             method: 'GET',
             url: main.baseUrl + '/2015-16/en.1.json'
@@ -23,6 +25,7 @@ myApp.controller('mainController', ['$http', '$scope', function ($http, $scope) 
             // this callback will be called asynchronously
             // when the response is available
             main.matches = response.data;
+            $scope.loading = false;
 
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
@@ -32,14 +35,17 @@ myApp.controller('mainController', ['$http', '$scope', function ($http, $scope) 
         });
     }
     var loadSecondSeason = function () {
+        $scope.loading = true;
         var matches2 = [];
         $http({
             method: 'GET',
             url: main.baseUrl + '/2016-17/en.1.json'
+            
 
         }).then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
+            $scope.loading = false;
             matches2 = response.data;
             var arr1 = $.map(main.matches, function (el) {
                 return el

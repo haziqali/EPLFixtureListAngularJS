@@ -1,12 +1,14 @@
-<div class="row" style="background-color: black">
+<div class="loader centered" ng-show="loading" style="color: whitesmoke"></div>
+
+<div class="row" style="background-color: black" ng-hide="loading">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: black">
         <div style="background-color: black; color: darkgrey">
             <div class="col-md-4" style="background-color: black"> <label>Filter by Year </label> <input type="text" ng-model="teamName.year" style="color: black"></div>
             <div class="col-md-4" style="background-color: black"> <label>Filter by Team </label><input type="text" ng-model="teamName.name" style="color: black"></div>
             <div class="col-md-4" style="background-color: black"> <label>Filter by Score</label><input type="text" ng-model="teamName.score" style="color: black"></div><br>
-
+            
         </div>
-        
+
         <div class="post-preview" ng-repeat="game in mainCtrl.matches" style="background-color: black;color: white; width: 100%;padding-bottom: 2vmax;" ng-show="mainCtrl.hideFunction()">
             <strong style="background-color: red;color: white; width: 100%;text-align: center;padding-top: 0vmax" class="center-block">{{game.name}}</strong> <br>
             <div ng-repeat="matches in game.matches">
@@ -28,8 +30,11 @@
                 </div>
             </div>
         </div>
-        
-<ul class="pager">
-                <a href="#id" style="background-color: firebrick;text-align: center;" class="btn btn-lg"> &uuarr; BACK TO TOP &uuarr;</a>
-            </ul>
+
+        <ul class="pager">
+            <a href="#top" style="background-color: firebrick;text-align: center;" class="btn btn-lg"> &uuarr; BACK TO TOP &uuarr;</a>
+        </ul>
     </div>
+    <footerinfo></footerinfo>
+    <!--custom directive-->
+</div>
