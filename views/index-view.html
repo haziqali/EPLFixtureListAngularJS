@@ -2,10 +2,10 @@
 
 <div class="row" style="background-color: black" ng-hide="loading">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: black">
-        <div style="background-color: black; color: darkgrey">
+        <div style="background-color: black; color: darkgrey; margin-left: -3%">
             <div class="col-md-4" style="background-color: black"> <label>Filter by Year </label> <input type="text" ng-model="teamName.year" style="color: black"></div>
             <div class="col-md-4" style="background-color: black"> <label>Filter by Team </label><input type="text" ng-model="teamName.name" style="color: black"></div>
-            <div class="col-md-4" style="background-color: black"> <label>Filter by Score</label><input type="text" ng-model="teamName.score" style="color: black"></div><br>
+            <div class="col-md-4" style="background-color: black"> <label>Filter by Score</label><input type="text" ng-model="teamName.score" style="color: black"></div><br><br>
             
         </div>
 
@@ -20,9 +20,9 @@
             </div>
         </div>
 
-        <div>
-            <div class="post-preview center-block" ng-repeat="game in mainCtrl.matches | customFilter:this" style="background-color: black;color: white; width: 100%;padding-bottom: 2vmax" ng-hide="mainCtrl.hideFunction()">
-                <div style="margin-top: 2vmax">
+        <div><br><br><br>
+            <div class="post-preview center-block" ng-repeat="game in mainCtrl.matches | customFilter:this" style="background-color: black;color: white; width: 100%;" ng-hide="mainCtrl.hideFunction()">
+                <div>
                     <a href="#!/match/{{game}}">
                         <h5 class="post-title center-block" style="text-align: center">
                             {{game.team1.name}} ({{game.team1.code}}) vs {{game.team2.name}} ({{game.team2.code}})</h5>
